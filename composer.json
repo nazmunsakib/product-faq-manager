@@ -1,0 +1,18 @@
+{
+    "name": "hp/product-faq-manager",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "PFAQM\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sakib",
+            "email": "nazmunsakib81@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

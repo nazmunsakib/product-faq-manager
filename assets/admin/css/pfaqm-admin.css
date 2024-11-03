@@ -1,0 +1,79 @@
+.pfaqm-tab-faq-sorting {
+    display: flex;
+}
+.pfaqm-tab-content-inner {
+    padding: 1em;
+}
+.pfaqm-tab-content-header h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.pfaqm-tab-content-header p {
+    margin-top: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+.pfaqm-faq-metabox-wrapper #pfaqm_product_select {
+    width: 250px;
+}
+.pfaqm-faq-metabox-wrapper label {
+    font-weight: 600;
+    margin-right: 20px;
+}
+.pfaqm-faq-select{
+    min-width: 300px;
+    max-width: 100%;
+}
+.pfaqm-tab-faq-list-wrapper {
+    margin-top: 20px;
+}
+.pfaqm-tab-faq-title {
+    margin: 0;
+}
+.pfaqm-tab-faq-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+#woocommerce-product-data ul.wc-tabs li.product_faq_woocommerce_tab a:before {
+    content: "\f223";
+}
+#pfaqm_product_data .pfaqm-product-loader {
+    position: absolute;
+    width: 80%;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#pfaqm_product_data .pfaqm-product-loader-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(240, 248, 255, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.pfaqm-show-loader{
+    display: block !important;
+}
+tr.pfaqm-faq-metabox-row th {
+    width: 200px;
+    text-align: left;
+}
+table.pfaqm-faq-metabox-table {
+    width: 100%;
+}
+#pfaqm_faq_products{
+    /* max-width: 100%; */
+    min-width: 300px;
+}
+.pfaqm-faq-metabox-table p {
+    margin-top: 5px;
+}
