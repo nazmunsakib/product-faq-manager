@@ -3,7 +3,7 @@
  * Plugin Name: Product FAQs Manager
  * Plugin URI: https://nazmunsakib.com/
  * Description: Product FAQs Manager helps store owners manage FAQs on product pages to improve user experience and increase conversions.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Nazmun Sakib
  * Author URI: https://nazmunsakib.com
  * License: GPL2
@@ -45,7 +45,7 @@ final class Product_FAQs_Manager {
      *
      * @var string
      */
-    private static $version = '1.0.0';
+    private static $version = '1.0.1';
 
     /**
      * Constructor.

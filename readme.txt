@@ -1,9 +1,9 @@
-=== Product FAQs Manager  ===
+=== Product FAQs Manager for WooCommerce  ===
 Contributors: nazmunsakib
 Tags: FAQ, FAQS, product FAQs, woocommerce FAQ, FAQs Manager
 Requires at least: 6.0
 Tested up to: 6.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -46,4 +46,9 @@ Brought to you by Nazmun Sakib from [nazmunsakib](https://nazmunsakib.com)
 More Features Coming Soon!
 
 == Changelog ==
+
+= 1.0.1 =
+* Add FAQ Layout 2
+
 = 1.0.0 =
+* First release!
