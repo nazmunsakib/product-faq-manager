@@ -37,15 +37,20 @@ const pfaqmFetch = async (endpoint = null, bodyData = {}) => {
  * Function to handle accordion toggle for FAQs
  */
 const pfaqmAccordion = (header, contentSelector) => {
-    const content = header.nextElementSibling;  // Get the content element after the header
+    if( !header ){
+        return false;
+    }
+
+    const content   = header.nextElementSibling;  // Get the content element after the header
+    const itemWrap  = header.parentElement;
     
     // Toggle the height of the content to show/hide it
     if (content.style.height === "0px" || content.style.height === "") {
         content.style.height = content.scrollHeight + "px";  
-        header.classList.add('pfaqm-open');
+        itemWrap.classList.add('pfaqm-open');
     } else {
         content.style.height = "0px";
-        header.classList.remove('pfaqm-open');
+        itemWrap.classList.remove('pfaqm-open');
     }
     
     // Collapse all other accordion items to ensure only one is open at a time
@@ -53,7 +58,7 @@ const pfaqmAccordion = (header, contentSelector) => {
     allItems.forEach(item => {
       if (item !== content && item.style.height !== "0px") {
         item.style.height = "0px";
-        item.previousElementSibling.classList.remove('pfaqm-open');
+        item.parentElement.classList.remove('pfaqm-open');
       }
     });
 }

@@ -81,6 +81,6 @@ class Product_Faq_Frontend {
         $faqs = $this->get_faqs($faqs_ids);
 
         // Include the FAQ layout template.
-        include PFAQM_PATH . '/views/layouts/layout-classic.php';
+        include PFAQM_PATH . '/views/layouts/layout-1.php';
     }
 }
