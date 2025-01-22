@@ -10,6 +10,7 @@ use PFAQM\Enqueue;
 use PFAQM\Product_Faq_Frontend;
 use PFAQM\Admin\Metaboxes;
 use PFAQM\Admin\Product_Faq_Backend;
+use PFAQM\Admin\Product_Faq_Settings;
 
 defined('ABSPATH') || die();
 
@@ -54,5 +55,6 @@ class Product_Faq_Manager_Main {
         new Product_Faq_Backend();
         new Rest_API();
         new Metaboxes();
+        new Product_Faq_Settings();
 	}
 }

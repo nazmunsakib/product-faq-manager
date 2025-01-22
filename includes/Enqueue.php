@@ -25,7 +25,7 @@ class Enqueue {
      * Initializes the class and hooks into WordPress to enqueue admin and frontend assets.
      */
     public function __construct() {
-        add_action('admin_enqueue_scripts', array($this, 'admin_assets'), 100);
+        add_action('admin_enqueue_scripts', array($this, 'admin_assets'));
         add_action('wp_enqueue_scripts', array($this, 'frontend_assets'), 100);
     }
 
@@ -37,14 +37,7 @@ class Enqueue {
      *
      * @return void
      */
-    public function admin_assets() {
-        // Register admin CSS files.
-        wp_register_style(
-            'chosen',
-            PFAQM_ASSETS . '/admin/css/chosen.min.css',
-            null,
-            PFAQM_VERSION
-        );
+    public function admin_assets($admin_page ) {
         wp_register_style(
             'pfaqm-multi-select',
             PFAQM_ASSETS . '/admin/css/multi-select.css',
@@ -80,6 +73,23 @@ class Enqueue {
             PFAQM_VERSION,
             true
         );
+
+        if ('product_faq_page_pfaqm-settings' == $admin_page) {
+            $asset_file = PFAQM_PATH . '/build/index.asset.php';
+            if (file_exists($asset_file)) {
+                $asset = include $asset_file;
+
+                if (is_array($asset) && isset($asset['dependencies'], $asset['version'])) {
+                    wp_enqueue_script(
+                        'pmf-settings-script',
+                        PFAQM_URL . '/build/index.js',
+                        $asset['dependencies'],
+                        $asset['version'],
+                        true
+                    );
+                }
+            }
+        }
 
         // Localize the global script with data accessible in JavaScript.
         wp_localize_script('pfaqm-global', 'pfaqmObj', array(

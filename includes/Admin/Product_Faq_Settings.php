@@ -4,7 +4,7 @@
  *
  * @package PFAQM
  */
-namespace PFAQM;
+namespace PFAQM\Admin;
 
 defined('ABSPATH') || die();
 
@@ -18,11 +18,25 @@ class Product_Faq_Settings {
 	}
 
 	private function add_hooks() {
-        add_action('init', [$this, 'register_post_type']);
+        add_action( 'admin_menu', [$this, 'add_settings_page'] );
 	}
 
-    public function register_post_type(){
+	public function add_settings_page() {
+		add_submenu_page(
+			'edit.php?post_type=product_faq',
+			'FAQs Settings',
+			'Settings',
+			'manage_options',
+			'pfaqm-settings',
+			[$this, 'render_settings_page']
+		);
+	}
 
-    }
-
+	public function render_settings_page() {
+		
+		printf(
+			'<div class="wrap" id="unadorned-announcement-bar-settings">%s</div>',
+			esc_html__( 'Loading…', 'unadorned-announcement-bar' )
+		);
+	}
 }
