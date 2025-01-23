@@ -7,7 +7,7 @@ const SettingsPage = () => {
 
 domReady( () => {
     const root = createRoot(
-        document.getElementById( 'pfaqm-settings' )
+        document.getElementById( 'faqm-settings' )
     );
 
     root.render( <SettingsPage /> );
