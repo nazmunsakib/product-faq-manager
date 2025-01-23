@@ -19,6 +19,7 @@ class Product_Faq_Settings {
 
 	private function add_hooks() {
         add_action( 'admin_menu', [$this, 'add_settings_page'] );
+		add_action('admin_head', [$this, 'remove_admin_notices']);
 	}
 
 	public function add_settings_page() {
@@ -33,10 +34,19 @@ class Product_Faq_Settings {
 	}
 
 	public function render_settings_page() {
-		
 		printf(
-			'<div class="wrap" id="unadorned-announcement-bar-settings">%s</div>',
+			'<div class="wrap" id="pfaqm-settings">%s</div>',
 			esc_html__( 'Loading…', 'unadorned-announcement-bar' )
 		);
+	}
+
+	function remove_admin_notices() {
+		$current_screen = get_current_screen();
+	
+		// Ensure this runs only on your plugin's admin page
+		if ( is_object($current_screen ) && strpos($current_screen->id, 'product_faq_page_pfaqm-settings' ) !== false ) {
+			remove_all_actions('admin_notices'); // Remove all admin notices
+			remove_all_actions('all_admin_notices'); // Remove other types of notices
+		}
 	}
 }

@@ -7,7 +7,7 @@ const SettingsPage = () => {
 
 domReady( () => {
     const root = createRoot(
-        document.getElementById( 'unadorned-announcement-bar-settings' )
+        document.getElementById( 'pfaqm-settings' )
     );
 
     root.render( <SettingsPage /> );
