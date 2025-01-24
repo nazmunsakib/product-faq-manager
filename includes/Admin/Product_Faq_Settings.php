@@ -18,29 +18,10 @@ class Product_Faq_Settings {
 	}
 
 	private function add_hooks() {
-        add_action( 'admin_menu', [$this, 'add_settings_page'] );
 		add_action('admin_head', [$this, 'remove_admin_notices']);
 	}
-
-	public function add_settings_page() {
-		add_submenu_page(
-			'edit.php?post_type=product_faq',
-			'FAQs Settings',
-			'Settings',
-			'manage_options',
-			'pfaqm-settings',
-			[$this, 'render_settings_page']
-		);
-	}
-
-	public function render_settings_page() {
-		printf(
-			'<div class="wrap" id="pfaqm-settings">%s</div>',
-			esc_html__( 'Loading…', 'unadorned-announcement-bar' )
-		);
-	}
-
-	function remove_admin_notices() {
+	
+	public function remove_admin_notices() {
 		$current_screen = get_current_screen();
 	
 		// Ensure this runs only on your plugin's admin page
