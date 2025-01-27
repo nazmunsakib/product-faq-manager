@@ -117,12 +117,32 @@ class Product_Faq_Backend {
         /**
          * Post Type: Product FAQs.
          */
-        $labels = [
-            "name" => esc_html__( "Product FAQs", "product-faq-manager" ),
-            "singular_name" => esc_html__( "Product FAQ", "product-faq-manager" ),
-            "add_new" => esc_html__( "Add FAQ", "product-faq-manager" ),
-            "add_new_item"  => esc_html__( "Add New FAQ", "product-faq-manager" ),
-        ];
+        $labels = array(
+            'name'                  => _x( 'Product FAQs', 'FAQ', 'product-faq-manager' ),
+            'singular_name'         => _x( 'FAQ', 'FAQ', 'product-faq-manager' ),
+            'menu_name'             => _x( 'Product FAQs', 'Product FAQs', 'product-faq-manager' ),
+            'name_admin_bar'        => _x( 'Product FAQs', 'Product FAQs', 'product-faq-manager' ),
+            'add_new'               => esc_html__( 'Add New FAQ', 'product-faq-manager' ),
+            'add_new_item'          => esc_html__( 'Add New FAQ', 'product-faq-manager' ),
+            'new_item'              => esc_html__( 'New FAQ', 'product-faq-manager' ),
+            'edit_item'             => esc_html__( 'Edit FAQ', 'product-faq-manager' ),
+            'view_item'             => esc_html__( 'View FAQ', 'product-faq-manager' ),
+            'all_items'             => esc_html__( 'All FAQS', 'product-faq-manager' ),
+            'search_items'          => esc_html__( 'Search FAQS', 'product-faq-manager' ),
+            'parent_item_colon'     => esc_html__( 'Parent FAQS:', 'product-faq-manager' ),
+            'not_found'             => esc_html__( 'No faqs found.', 'product-faq-manager' ),
+            'not_found_in_trash'    => esc_html__( 'No faqs found in Trash.', 'product-faq-manager' ),
+            'featured_image'        => _x( 'FAQ Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'product-faq-manager' ),
+            'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'product-faq-manager' ),
+            'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'product-faq-manager' ),
+            'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'product-faq-manager' ),
+            'archives'              => _x( 'FAQ archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'product-faq-manager' ),
+            'insert_into_item'      => _x( 'Insert into ffw', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'product-faq-manager' ),
+            'uploaded_to_this_item' => _x( 'Uploaded to this faq', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'product-faq-manager' ),
+            'filter_items_list'     => _x( 'Filter faqs list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'product-faq-manager' ),
+            'items_list_navigation' => _x( 'FAQS list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'product-faq-manager' ),
+            'items_list'            => _x( 'FAQS list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'product-faq-manager' ),
+        );
     
         $args = [
             "label" => esc_html__( "FAQs Manager", "product-faq-manager" ),
@@ -148,6 +168,7 @@ class Product_Faq_Backend {
             "query_var" => true,
             "supports" => [ "title", "editor", "thumbnail" ],
             "show_in_graphql" => false,
+            "menu_icon" => "dashicons-editor-help"
         ];
     
         register_post_type( "product_faq", $args );

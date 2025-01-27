@@ -75,25 +75,15 @@ class Admin_Menu {
 
     public function render_dashboard() {
 		printf(
-			'<div class="wrap" id="pfaqm-settings">%s</div>',
-			esc_html__( 'Loading…', 'unadorned-announcement-bar' )
+			'<div class="wrap" id="pfaqm-dashboard">%s</div>',
+			esc_html__( 'Loading…', 'product-faq-manager' )
 		);
 	}
 
 	public function render_settings() {
 		printf(
-			'<div class="wrap" id="pfaqm-settings">%s</div>',
-			esc_html__( 'Loading…', 'unadorned-announcement-bar' )
+			'<div class="wrap" id="pfaqm-dashboard">%s</div>',
+			esc_html__( 'Loading…', 'product-faq-manager' )
 		);
-	}
-
-	public function remove_admin_notices() {
-		$current_screen = get_current_screen();
-	
-		// Ensure this runs only on your plugin's admin page
-		if ( is_object($current_screen ) && strpos($current_screen->id, 'product_faq_page_pfaqm-settings' ) !== false ) {
-			remove_all_actions('admin_notices'); // Remove all admin notices
-			remove_all_actions('all_admin_notices'); // Remove other types of notices
-		}
 	}
 }

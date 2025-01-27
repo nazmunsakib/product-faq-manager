@@ -25,7 +25,7 @@ class Product_Faq_Settings {
 		$current_screen = get_current_screen();
 	
 		// Ensure this runs only on your plugin's admin page
-		if ( is_object($current_screen ) && strpos($current_screen->id, 'product_faq_page_pfaqm-settings' ) !== false ) {
+		if ( is_object($current_screen ) && ( strpos($current_screen->id, 'product_faq_page_pfaqm-settings' ) !== false || strpos($current_screen->id, 'product_faq_page_pfaqm-dashboard' ) !== false ) ) {
 			remove_all_actions('admin_notices'); // Remove all admin notices
 			remove_all_actions('all_admin_notices'); // Remove other types of notices
 		}

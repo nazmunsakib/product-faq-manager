@@ -74,7 +74,7 @@ class Enqueue {
             true
         );
 
-        if ('product_faq_page_pfaqm-settings' == $admin_page) {
+        if ('product_faq_page_pfaqm-dashboard' == $admin_page || 'product_faq_page_pfaqm-settings' == $admin_page) {
             $asset_file = PFAQM_PATH . '/build/index.asset.php';
             if (file_exists($asset_file)) {
                 $asset = include $asset_file;
