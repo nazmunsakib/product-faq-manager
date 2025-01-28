@@ -80,6 +80,8 @@ class Enqueue {
                 $asset = include $asset_file;
 
                 if (is_array($asset) && isset($asset['dependencies'], $asset['version'])) {
+                    wp_enqueue_style('pfaqm-admin');
+                    
                     wp_enqueue_script(
                         'pmf-settings-script',
                         PFAQM_URL . '/build/index.js',

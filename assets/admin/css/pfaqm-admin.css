@@ -77,3 +77,33 @@ table.pfaqm-faq-metabox-table {
 .pfaqm-faq-metabox-table p {
     margin-top: 5px;
 }
+
+/**
+* Admin page style
+**/
+.pfaqm-header {
+    padding: 100px;
+    background-color: #ededed;
+    border-radius: 10px;
+}
+.pfaqm-header-wrapper {
+    display: flex;
+}
+.pfaqm-header-wrapper img {
+    width: 70px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.pfaqm-header-wrapper h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 100%;
+    padding-top: 0;
+}
+.pfaqm-header-wrapper p {
+    margin: 5px 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+}
